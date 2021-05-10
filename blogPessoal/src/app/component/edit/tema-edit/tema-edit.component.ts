@@ -12,7 +12,6 @@ import { environment } from 'src/environments/environment.prod';
 export class TemaEditComponent implements OnInit {
 
   tema: Tema = new Tema();
-  
 
   constructor(
     private temaService: TemaService,
@@ -21,6 +20,8 @@ export class TemaEditComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+
+    window.scroll(0,0);
 
     if (environment.token == "") {
       this.router.navigate(["/entrar"]);
