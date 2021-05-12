@@ -9,14 +9,14 @@ import { Tema } from '../model/Tema';
 })
 export class TemaService {
 
-  serverPort = environment.server + environment.port;
-
   constructor(
     private http: HttpClient
   ) { }
 
+  serverPort = environment.server + environment.port;
+
   token = {
-    headers: new HttpHeaders().set("Authorization", environment.token)
+    headers: new HttpHeaders().set("Authorization", localStorage.getItem("token") || "")
   }
 
   getAllTema(): Observable<Tema[]> {

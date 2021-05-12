@@ -9,14 +9,14 @@ import { Postagem } from '../model/Postagem';
 })
 export class PostagemService {
 
-  serverPort = environment.server + environment.port;
-
   constructor(
     private http: HttpClient
   ) { }
 
+  serverPort = environment.server + environment.port;
+
   token = {
-    headers: new HttpHeaders().set("Authorization", environment.token)
+    headers: new HttpHeaders().set("Authorization", localStorage.getItem("token") || "")
   }
 
   getAllPostagem(): Observable<Postagem[]> {

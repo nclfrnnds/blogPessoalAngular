@@ -10,11 +10,11 @@ import { UsuarioLogin } from '../model/UsuarioLogin';
 })
 export class AuthService {
 
-  serverPort = environment.server + environment.port;
-
   constructor(
     private http: HttpClient
   ) { }
+
+  serverPort = environment.server + environment.port;
 
   entrar(usuarioLogin: UsuarioLogin) : Observable<UsuarioLogin> {
     return this.http.post<UsuarioLogin>(`${this.serverPort}/usuarios/login`, usuarioLogin);
@@ -31,7 +31,7 @@ export class AuthService {
   logado() {
     let ok: boolean = false;
 
-    if (environment.token != "") {
+    if (localStorage.getItem("token") != null) {
       ok = true;
     }
 
