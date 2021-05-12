@@ -34,6 +34,9 @@ export class InicioComponent implements OnInit {
   usuario: Usuario = new Usuario();
   idUsuario = environment.id;
 
+  key = "data";
+  reverse = true;
+
   ngOnInit() {
 
     window.scroll(0,0);

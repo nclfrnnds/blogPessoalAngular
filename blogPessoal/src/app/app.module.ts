@@ -19,6 +19,7 @@ import { PostagemEditComponent } from './component/edit/postagem-edit/postagem-e
 import { UsuarioEditComponent } from './component/edit/usuario-edit/usuario-edit.component';
 import { AlertasComponent } from './component/alertas/alertas.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { OrderModule } from 'ngx-order-pipe';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    OrderModule
   ],
   providers: [{
     provide: LocationStrategy,
