@@ -29,7 +29,7 @@ export class UsuarioEditComponent implements OnInit {
     window.scroll(0,0);
 
     if (localStorage.getItem("token") == null) {
-      this.alertas.showAlertInfo("Sua seção expirou! Faça o login novamente.");
+      this.alertas.showAlertInfo("Sua sessão expirou! Faça o login novamente.");
       this.router.navigate(["/entrar"]);
     }
 
@@ -58,9 +58,10 @@ export class UsuarioEditComponent implements OnInit {
         this.router.navigate(["/inicio"]);
         this.alertas.showAlertInfo("Usuário atualizado com sucesso. Faça o login novamente!");
         localStorage.removeItem("token");
+        environment.id = 0;
         environment.nome = "";
         environment.foto = "";
-        environment.id = 0;
+        environment.tipo = "";
         this.router.navigate(["/entrar"]);
       });
     }

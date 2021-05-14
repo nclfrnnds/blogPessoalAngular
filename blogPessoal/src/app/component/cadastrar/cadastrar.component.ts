@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertasService } from 'src/app/service/alertas.service';
+import { environment } from 'src/environments/environment.prod';
 import { Usuario } from '../../model/Usuario';
 import { AuthService } from '../../service/auth.service';
 
@@ -23,6 +24,10 @@ export class CadastrarComponent implements OnInit {
 
   ngOnInit() {
     window.scroll(0,0);
+
+    setTimeout(() => {
+      this.limpar();
+    });
   }
 
   confirmarSenha(event: any) {
@@ -46,6 +51,14 @@ export class CadastrarComponent implements OnInit {
         this.alertas.showAlertSuccess("Usuário cadastrado com sucesso.");
       });
     }
+  }
+
+  limpar() {
+    localStorage.removeItem("token");
+    environment.id = 0;
+    environment.nome = "";
+    environment.foto = "";
+    environment.tipo = "";
   }
 
 }

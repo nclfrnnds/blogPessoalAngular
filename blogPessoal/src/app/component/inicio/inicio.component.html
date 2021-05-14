@@ -47,7 +47,7 @@
       <div class="row d-flex justify-content-center mt-5 mb-5">
         <div class="col-md-4">
           <div class="form-group">
-            <input type="text" class="form-control" id="titulo" placeholder="Busque por título" [(ngModel)]="tituloPostagem" (keyup)="findByTituloPostagem()">
+            <input type="text" class="form-control" id="tituloPostagem" placeholder="Busque por título" [(ngModel)]="tituloPostagem" (keyup)="findByTituloPostagem()">
           </div>
         </div>
       </div>
@@ -82,7 +82,7 @@
             </small></p>
             <p class="card-text mt-3">{{postagem.texto}}</p>
             <p class="card-text"><small class="text-muted">
-              Publicado em {{postagem.data | date: "dd/MM/yyyy"}} às {{postagem.data | date: "HH:mm"}}
+              Publicado por {{usuario.nome}} em {{postagem.data | date: "dd/MM/yyyy"}} às {{postagem.data | date: "HH:mm"}}
             </small></p>
 
             <a [routerLink]="['/postagem-edit', postagem.id]" class="text-info mr-3" href="">Editar</a>
@@ -99,7 +99,7 @@
       <div class="row d-flex justify-content-center mt-5 mb-5">
         <div class="col-md-4">
           <div class="form-group">
-            <input type="text" class="form-control" id="" placeholder="Busque por tema" [(ngModel)]="nomeTema" (keyup)="findByNomeTema()">
+            <input type="text" class="form-control" id="nomeTema" placeholder="Busque por tema" [(ngModel)]="nomeTema" (keyup)="findByNomeTema()">
           </div>
         </div>
       </div>
@@ -109,6 +109,9 @@
         *ngFor="let postagem of tema.postagem | orderBy: key : reverse">
           <div class="card-body">
             <h5 class="card-title m-0">{{postagem.titulo}}</h5>
+            <p class="card-text"><small class="text-muted">
+              Tema: {{tema.descricao}}
+            </small></p>
             <p class="card-text mt-3">{{postagem.texto}}</p>
             <p class="card-text"><small class="text-muted">
               Publicado por {{postagem.usuario.nome}} em {{postagem.data | date: "dd/MM/yyyy"}} às {{postagem.data | date: "HH:mm"}}

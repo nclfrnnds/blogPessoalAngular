@@ -22,6 +22,10 @@ export class EntrarComponent implements OnInit {
 
   ngOnInit() {
     window.scroll(0,0);
+    
+    setTimeout(() => {
+      this.limpar();
+    });
   }
 
   entrar() {
@@ -40,6 +44,14 @@ export class EntrarComponent implements OnInit {
         this.alertas.showAlertDanger("Usuário ou senha estão incorretos!")
       }
     });
+  }
+
+  limpar() {
+    localStorage.removeItem("token");
+    environment.id = 0;
+    environment.nome = "";
+    environment.foto = "";
+    environment.tipo = "";
   }
 
 }
