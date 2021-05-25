@@ -148,6 +148,9 @@
                                 <a href="#entrar">entrar</a>
                             </li>
                             <li>
+                                <a href="#limpar">limpar</a>
+                            </li>
+                            <li>
                                 <a href="#ngOnInit">ngOnInit</a>
                             </li>
                         </ul>
@@ -266,8 +269,47 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="27"
-                            class="link-to-prism">src/app/component/entrar/entrar.component.ts:27</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="31"
+                            class="link-to-prism">src/app/component/entrar/entrar.component.ts:31</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="limpar"></a>
+                    <span class="name">
+                        <b>
+                            limpar
+                        </b>
+                        <a href="#limpar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>limpar()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="49"
+                            class="link-to-prism">src/app/component/entrar/entrar.component.ts:49</a></div>
                 </td>
             </tr>
 
@@ -390,6 +432,10 @@ export class EntrarComponent implements OnInit {
 
   ngOnInit() {
     window.scroll(0,0);
+    
+    setTimeout(() &#x3D;&gt; {
+      this.limpar();
+    });
   }
 
   entrar() {
@@ -408,6 +454,14 @@ export class EntrarComponent implements OnInit {
         this.alertas.showAlertDanger(&quot;Usuário ou senha estão incorretos!&quot;)
       }
     });
+  }
+
+  limpar() {
+    localStorage.removeItem(&quot;token&quot;);
+    environment.id &#x3D; 0;
+    environment.nome &#x3D; &quot;&quot;;
+    environment.foto &#x3D; &quot;&quot;;
+    environment.tipo &#x3D; &quot;&quot;;
   }
 
 }

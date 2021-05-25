@@ -210,51 +210,51 @@
                                         <tbody>
                                                 <tr>
                                                         <td>authService</td>
-
+                                                  
                                                         <td>
                                                                         <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
                                                         </td>
-
+                                                  
                                                     <td>
                                                             No
                                                     </td>
-
+                                                    
                                                 </tr>
                                                 <tr>
                                                         <td>router</td>
-
+                                                  
                                                         <td>
                                                                         <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
                                                         </td>
-
+                                                  
                                                     <td>
                                                             No
                                                     </td>
-
+                                                    
                                                 </tr>
                                                 <tr>
                                                         <td>route</td>
-
+                                                  
                                                         <td>
                                                                         <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
                                                         </td>
-
+                                                  
                                                     <td>
                                                             No
                                                     </td>
-
+                                                    
                                                 </tr>
                                                 <tr>
                                                         <td>alertas</td>
-
+                                                  
                                                         <td>
                                                                         <code><a href="../injectables/AlertasService.html" target="_self" >AlertasService</a></code>
                                                         </td>
-
+                                                  
                                                     <td>
                                                             No
                                                     </td>
-
+                                                    
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -270,7 +270,7 @@
 
 
     <section>
-
+    
     <h3 id="methods">
         Methods
     </h3>
@@ -377,7 +377,7 @@
 
                     </div>
                     <div class="io-description">
-
+                        
                     </div>
                 </td>
             </tr>
@@ -405,8 +405,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="69"
-                            class="link-to-prism">src/app/component/edit/usuario-edit/usuario-edit.component.ts:69</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="70"
+                            class="link-to-prism">src/app/component/edit/usuario-edit/usuario-edit.component.ts:70</a></div>
                 </td>
             </tr>
 
@@ -447,7 +447,7 @@
 
                     </div>
                     <div class="io-description">
-
+                        
                     </div>
                 </td>
             </tr>
@@ -556,7 +556,7 @@
 
                     </div>
                     <div class="io-description">
-
+                        
                     </div>
                 </td>
             </tr>
@@ -564,7 +564,7 @@
     </table>
 </section>
     <section>
-
+    
         <h3 id="inputs">
             Properties
         </h3>
@@ -747,9 +747,10 @@ export class UsuarioEditComponent implements OnInit {
         this.router.navigate([&quot;/inicio&quot;]);
         this.alertas.showAlertInfo(&quot;Usuário atualizado com sucesso. Faça o login novamente!&quot;);
         localStorage.removeItem(&quot;token&quot;);
+        environment.id &#x3D; 0;
         environment.nome &#x3D; &quot;&quot;;
         environment.foto &#x3D; &quot;&quot;;
-        environment.id &#x3D; 0;
+        environment.tipo &#x3D; &quot;&quot;;
         this.router.navigate([&quot;/entrar&quot;]);
       });
     }
@@ -852,7 +853,7 @@ export class UsuarioEditComponent implements OnInit {
         </div>
     </div>
 
-
+    
 </div>
 
 <script src="../js/libs/vis.min.js"></script>
@@ -875,7 +876,7 @@ export class UsuarioEditComponent implements OnInit {
 
 
 
-
+                   
 
 
 

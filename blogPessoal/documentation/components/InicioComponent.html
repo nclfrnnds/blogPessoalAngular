@@ -240,63 +240,63 @@
                                         <tbody>
                                                 <tr>
                                                         <td>router</td>
-
+                                                  
                                                         <td>
                                                                         <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
                                                         </td>
-
+                                                  
                                                     <td>
                                                             No
                                                     </td>
-
+                                                    
                                                 </tr>
                                                 <tr>
                                                         <td>postagemService</td>
-
+                                                  
                                                         <td>
                                                                         <code><a href="../injectables/PostagemService.html" target="_self" >PostagemService</a></code>
                                                         </td>
-
+                                                  
                                                     <td>
                                                             No
                                                     </td>
-
+                                                    
                                                 </tr>
                                                 <tr>
                                                         <td>temaService</td>
-
+                                                  
                                                         <td>
                                                                         <code><a href="../injectables/TemaService.html" target="_self" >TemaService</a></code>
                                                         </td>
-
+                                                  
                                                     <td>
                                                             No
                                                     </td>
-
+                                                    
                                                 </tr>
                                                 <tr>
                                                         <td>authService</td>
-
+                                                  
                                                         <td>
                                                                         <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
                                                         </td>
-
+                                                  
                                                     <td>
                                                             No
                                                     </td>
-
+                                                    
                                                 </tr>
                                                 <tr>
                                                         <td>alertas</td>
-
+                                                  
                                                         <td>
                                                                         <code><a href="../injectables/AlertasService.html" target="_self" >AlertasService</a></code>
                                                         </td>
-
+                                                  
                                                     <td>
                                                             No
                                                     </td>
-
+                                                    
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -312,7 +312,7 @@
 
 
     <section>
-
+    
     <h3 id="methods">
         Methods
     </h3>
@@ -630,7 +630,7 @@
     </table>
 </section>
     <section>
-
+    
         <h3 id="inputs">
             Properties
         </h3>
@@ -1124,7 +1124,7 @@ findByNomeTema() {
       &lt;div class&#x3D;&quot;row d-flex justify-content-center mt-5 mb-5&quot;&gt;
         &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
           &lt;div class&#x3D;&quot;form-group&quot;&gt;
-            &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; id&#x3D;&quot;titulo&quot; placeholder&#x3D;&quot;Busque por título&quot; [(ngModel)]&#x3D;&quot;tituloPostagem&quot; (keyup)&#x3D;&quot;findByTituloPostagem()&quot;&gt;
+            &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; id&#x3D;&quot;tituloPostagem&quot; placeholder&#x3D;&quot;Busque por título&quot; [(ngModel)]&#x3D;&quot;tituloPostagem&quot; (keyup)&#x3D;&quot;findByTituloPostagem()&quot;&gt;
           &lt;/div&gt;
         &lt;/div&gt;
       &lt;/div&gt;
@@ -1134,13 +1134,22 @@ findByNomeTema() {
         *ngFor&#x3D;&quot;let postagem of listaPostagens | orderBy: key : reverse&quot;&gt;
           &lt;div class&#x3D;&quot;card-body&quot;&gt;
             &lt;h5 class&#x3D;&quot;card-title m-0&quot;&gt;{{postagem.titulo}}&lt;/h5&gt;
-            &lt;p class&#x3D;&quot;card-text&quot;&gt;&lt;small class&#x3D;&quot;text-muted&quot;&gt;
-              Tema: {{postagem.tema.descricao}}
-            &lt;/small&gt;&lt;/p&gt;
-            &lt;p class&#x3D;&quot;card-text mt-3&quot;&gt;{{postagem.texto}}&lt;/p&gt;
-            &lt;p class&#x3D;&quot;card-text&quot;&gt;&lt;small class&#x3D;&quot;text-muted&quot;&gt;
-              Publicado por {{postagem.usuario.nome}} em {{postagem.data | date: &quot;dd/MM/yyyy&quot;}} às {{postagem.data | date: &quot;HH:mm&quot;}}
-            &lt;/small&gt;&lt;/p&gt;
+            &lt;p class&#x3D;&quot;card-text&quot;&gt;
+              &lt;small class&#x3D;&quot;text-muted&quot;&gt;
+                Tema: {{postagem.tema.descricao}}
+              &lt;/small&gt;
+            &lt;/p&gt;
+            &lt;p class&#x3D;&quot;card-text&quot;&gt;{{postagem.texto}}&lt;/p&gt;
+            &lt;p class&#x3D;&quot;card-text m-0&quot;&gt;
+              &lt;small class&#x3D;&quot;text-muted&quot;&gt;
+                Publicado por {{postagem.usuario.nome}}
+              &lt;/small&gt;
+            &lt;/p&gt;
+            &lt;p class&#x3D;&quot;card-text&quot;&gt;
+              &lt;small class&#x3D;&quot;text-muted&quot;&gt;
+                em {{postagem.data | date: &quot;dd/MM/yyyy&quot;}} às {{postagem.data | date: &quot;HH:mm&quot;}}
+              &lt;/small&gt;
+            &lt;/p&gt;
           &lt;/div&gt;
         &lt;/div&gt;
       &lt;/div&gt;
@@ -1154,13 +1163,22 @@ findByNomeTema() {
         *ngFor&#x3D;&quot;let postagem of usuario.postagem | orderBy: key : reverse&quot;&gt;
           &lt;div class&#x3D;&quot;card-body&quot;&gt;
             &lt;h5 class&#x3D;&quot;card-title m-0&quot;&gt;{{postagem.titulo}}&lt;/h5&gt;
-            &lt;p class&#x3D;&quot;card-text&quot;&gt;&lt;small class&#x3D;&quot;text-muted&quot;&gt;
-              Tema: {{postagem.tema.descricao}}
-            &lt;/small&gt;&lt;/p&gt;
-            &lt;p class&#x3D;&quot;card-text mt-3&quot;&gt;{{postagem.texto}}&lt;/p&gt;
-            &lt;p class&#x3D;&quot;card-text&quot;&gt;&lt;small class&#x3D;&quot;text-muted&quot;&gt;
-              Publicado em {{postagem.data | date: &quot;dd/MM/yyyy&quot;}} às {{postagem.data | date: &quot;HH:mm&quot;}}
-            &lt;/small&gt;&lt;/p&gt;
+            &lt;p class&#x3D;&quot;card-text&quot;&gt;
+              &lt;small class&#x3D;&quot;text-muted&quot;&gt;
+                Tema: {{postagem.tema.descricao}}
+              &lt;/small&gt;
+            &lt;/p&gt;
+            &lt;p class&#x3D;&quot;card-text&quot;&gt;{{postagem.texto}}&lt;/p&gt;
+            &lt;p class&#x3D;&quot;card-text m-0&quot;&gt;
+              &lt;small class&#x3D;&quot;text-muted&quot;&gt;
+                Publicado por {{usuario.nome}}
+              &lt;/small&gt;
+            &lt;/p&gt;
+            &lt;p class&#x3D;&quot;card-text&quot;&gt;
+              &lt;small class&#x3D;&quot;text-muted&quot;&gt;
+                em {{postagem.data | date: &quot;dd/MM/yyyy&quot;}} às {{postagem.data | date: &quot;HH:mm&quot;}}
+              &lt;/small&gt;
+            &lt;/p&gt;
 
             &lt;a [routerLink]&#x3D;&quot;[&#x27;/postagem-edit&#x27;, postagem.id]&quot; class&#x3D;&quot;text-info mr-3&quot; href&#x3D;&quot;&quot;&gt;Editar&lt;/a&gt;
             &lt;a [routerLink]&#x3D;&quot;[&#x27;/postagem-delete&#x27;, postagem.id]&quot; class&#x3D;&quot;text-danger&quot; href&#x3D;&quot;&quot;&gt;Apagar&lt;/a&gt;
@@ -1176,7 +1194,7 @@ findByNomeTema() {
       &lt;div class&#x3D;&quot;row d-flex justify-content-center mt-5 mb-5&quot;&gt;
         &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
           &lt;div class&#x3D;&quot;form-group&quot;&gt;
-            &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; id&#x3D;&quot;&quot; placeholder&#x3D;&quot;Busque por tema&quot; [(ngModel)]&#x3D;&quot;nomeTema&quot; (keyup)&#x3D;&quot;findByNomeTema()&quot;&gt;
+            &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; id&#x3D;&quot;nomeTema&quot; placeholder&#x3D;&quot;Busque por tema&quot; [(ngModel)]&#x3D;&quot;nomeTema&quot; (keyup)&#x3D;&quot;findByNomeTema()&quot;&gt;
           &lt;/div&gt;
         &lt;/div&gt;
       &lt;/div&gt;
@@ -1186,10 +1204,22 @@ findByNomeTema() {
         *ngFor&#x3D;&quot;let postagem of tema.postagem | orderBy: key : reverse&quot;&gt;
           &lt;div class&#x3D;&quot;card-body&quot;&gt;
             &lt;h5 class&#x3D;&quot;card-title m-0&quot;&gt;{{postagem.titulo}}&lt;/h5&gt;
-            &lt;p class&#x3D;&quot;card-text mt-3&quot;&gt;{{postagem.texto}}&lt;/p&gt;
-            &lt;p class&#x3D;&quot;card-text&quot;&gt;&lt;small class&#x3D;&quot;text-muted&quot;&gt;
-              Publicado por {{postagem.usuario.nome}} em {{postagem.data | date: &quot;dd/MM/yyyy&quot;}} às {{postagem.data | date: &quot;HH:mm&quot;}}
-            &lt;/small&gt;&lt;/p&gt;
+            &lt;p class&#x3D;&quot;card-text&quot;&gt;
+              &lt;small class&#x3D;&quot;text-muted&quot;&gt;
+                Tema: {{tema.descricao}}
+              &lt;/small&gt;
+            &lt;/p&gt;
+            &lt;p class&#x3D;&quot;card-text&quot;&gt;{{postagem.texto}}&lt;/p&gt;
+            &lt;p class&#x3D;&quot;card-text m-0&quot;&gt;
+              &lt;small class&#x3D;&quot;text-muted&quot;&gt;
+                Publicado por {{postagem.usuario.nome}}
+              &lt;/small&gt;
+            &lt;/p&gt;
+            &lt;p class&#x3D;&quot;card-text&quot;&gt;
+              &lt;small class&#x3D;&quot;text-muted&quot;&gt;
+                em {{postagem.data | date: &quot;dd/MM/yyyy&quot;}} às {{postagem.data | date: &quot;HH:mm&quot;}}
+              &lt;/small&gt;
+            &lt;/p&gt;
           &lt;/div&gt;
         &lt;/div&gt;
       &lt;/div&gt;
@@ -1266,14 +1296,14 @@ findByNomeTema() {
         </div>
     </div>
 
-
+    
 </div>
 
 <script src="../js/libs/vis.min.js"></script>
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="container-fluid">  <div class="row bg-secondary d-flex align-items-center">    <div class="col-md-6">      <div class="row d-flex justify-content-center">        <div class="col-md-6 text-white">          <h1 class="fs-54">Boas vindas!</h1>          <h5 class="fs-18">Expresse aqui seus pensamentos e opiniões.</h5>        </div>      </div>      <div class="row d-flex justify-content-center mt-3 mb-5">        <div class="col-md-6">          <button class="btn btn-light mt-2 mr-2" data-toggle="modal" data-target="#nova-postagem">Nova postagem</button>          <a class="btn btn-outline-light mt-2" href="#postagens">Ver postagens</a>        </div>      </div>    </div>    <div class="col-md-6 d-flex justify-content-center">      <img src="https://i.imgur.com/H88yIo2.png" alt="" width="500px" height="500px">    </div>  </div></div><div class="container mb-5 mt-5" id="postagens">  <nav>    <div class="nav nav-tabs d-flex justify-content-center" id="nav-tab" role="tablist">      <a class="nav-item nav-link text-secondary font-weight-bold active" id="nav-todas-as-postagens-tab" data-toggle="tab" href="#todas-as-postagens" role="tab" aria-controls="nav-todas-as-postagens" aria-selected="true">Todas as postagens</a>      <a (click)="findByIdUsuario()" class="nav-item nav-link text-secondary font-weight-bold" id="nav-minhas-postagens-tab" data-toggle="tab" href="#minhas-postagens" role="tab" aria-controls="nav-minhas-postagens" aria-selected="false">Minhas postagens</a>      <a class="nav-item nav-link text-secondary font-weight-bold" id="nav-postagens-por-tema-tab" data-toggle="tab" href="#postagens-por-tema" role="tab" aria-controls="nav-postagens-por-tema" aria-selected="false">Postagens por tema</a>    </div>  </nav>  <div class="tab-content mt-5" id="nav-tabContent">    <div class="tab-pane fade show active" id="todas-as-postagens" role="tabpanel" aria-labelledby="nav-todas-as-postagens-tab">      <div class="row d-flex justify-content-center mt-5 mb-5">        <div class="col-md-4">          <div class="form-group">            <input type="text" class="form-control" id="titulo" placeholder="Busque por título" [(ngModel)]="tituloPostagem" (keyup)="findByTituloPostagem()">          </div>        </div>      </div>      <div class="card-columns">        <div class="card text-center"        *ngFor="let postagem of listaPostagens | orderBy: key : reverse">          <div class="card-body">            <h5 class="card-title m-0">{{postagem.titulo}}</h5>            <p class="card-text"><small class="text-muted">              Tema: {{postagem.tema.descricao}}            </small></p>            <p class="card-text mt-3">{{postagem.texto}}</p>            <p class="card-text"><small class="text-muted">              Publicado por {{postagem.usuario.nome}} em {{postagem.data | date: "dd/MM/yyyy"}} às {{postagem.data | date: "HH:mm"}}            </small></p>          </div>        </div>      </div>    </div>    <div class="tab-pane fade" id="minhas-postagens" role="tabpanel" aria-labelledby="nav-minhas-postagens-tab">      <div class="card-columns">        <div class="card text-center"        *ngFor="let postagem of usuario.postagem | orderBy: key : reverse">          <div class="card-body">            <h5 class="card-title m-0">{{postagem.titulo}}</h5>            <p class="card-text"><small class="text-muted">              Tema: {{postagem.tema.descricao}}            </small></p>            <p class="card-text mt-3">{{postagem.texto}}</p>            <p class="card-text"><small class="text-muted">              Publicado em {{postagem.data | date: "dd/MM/yyyy"}} às {{postagem.data | date: "HH:mm"}}            </small></p>            <a [routerLink]="[\'/postagem-edit\', postagem.id]" class="text-info mr-3" href="">Editar</a>            <a [routerLink]="[\'/postagem-delete\', postagem.id]" class="text-danger" href="">Apagar</a>          </div>        </div>      </div>    </div>    <div class="tab-pane fade" id="postagens-por-tema" role="tabpanel" aria-labelledby="nav-postagens-por-tema-tab">      <div class="row d-flex justify-content-center mt-5 mb-5">        <div class="col-md-4">          <div class="form-group">            <input type="text" class="form-control" id="" placeholder="Busque por tema" [(ngModel)]="nomeTema" (keyup)="findByNomeTema()">          </div>        </div>      </div>      <div class="card-columns" *ngFor="let tema of listaTemas">        <div class="card text-center"        *ngFor="let postagem of tema.postagem | orderBy: key : reverse">          <div class="card-body">            <h5 class="card-title m-0">{{postagem.titulo}}</h5>            <p class="card-text mt-3">{{postagem.texto}}</p>            <p class="card-text"><small class="text-muted">              Publicado por {{postagem.usuario.nome}} em {{postagem.data | date: "dd/MM/yyyy"}} às {{postagem.data | date: "HH:mm"}}            </small></p>          </div>        </div>      </div>    </div>  </div></div><div class="modal fade" id="nova-postagem" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">  <div class="modal-dialog modal-dialog-centered" role="document">    <div class="modal-content">      <div class="modal-header">        <h5 class="modal-title" id="TituloModalCentralizado">Nova postagem</h5>        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">          <span aria-hidden="true">&times;</span>        </button>      </div>      <div class="modal-body">        <div class="form-group">          <label for="titulo">Título</label>          <input [(ngModel)]="postagem.titulo" type="text" class="form-control" id="titulo" placeholder="Digite o título">        </div>        <div class="form-group">          <label for="texto">Texto</label>          <textarea [(ngModel)]="postagem.texto" name="texto" id="texto" rows="3" class="form-control"></textarea>        </div>        <div class="form-group">          <label for="tema">Escolha um tema ou <a data-dismiss="modal" routerLink="/tema">cadastre um novo</a>:</label>          <select name="tema" id="tema" class="form-control" [(ngModel)]="idTema" (change)="findByIdTema()">            <option *ngFor="let tema of listaTemas" value="{{tema.id}}">              {{tema.descricao}}            </option>          </select>        </div>      </div>      <div class="modal-footer">        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>        <button type="button" class="btn btn-success" data-dismiss="modal" (click)="publicar()">Publicar</button>      </div>    </div>  </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="container-fluid">  <div class="row bg-secondary d-flex align-items-center">    <div class="col-md-6">      <div class="row d-flex justify-content-center">        <div class="col-md-6 text-white">          <h1 class="fs-54">Boas vindas!</h1>          <h5 class="fs-18">Expresse aqui seus pensamentos e opiniões.</h5>        </div>      </div>      <div class="row d-flex justify-content-center mt-3 mb-5">        <div class="col-md-6">          <button class="btn btn-light mt-2 mr-2" data-toggle="modal" data-target="#nova-postagem">Nova postagem</button>          <a class="btn btn-outline-light mt-2" href="#postagens">Ver postagens</a>        </div>      </div>    </div>    <div class="col-md-6 d-flex justify-content-center">      <img src="https://i.imgur.com/H88yIo2.png" alt="" width="500px" height="500px">    </div>  </div></div><div class="container mb-5 mt-5" id="postagens">  <nav>    <div class="nav nav-tabs d-flex justify-content-center" id="nav-tab" role="tablist">      <a class="nav-item nav-link text-secondary font-weight-bold active" id="nav-todas-as-postagens-tab" data-toggle="tab" href="#todas-as-postagens" role="tab" aria-controls="nav-todas-as-postagens" aria-selected="true">Todas as postagens</a>      <a (click)="findByIdUsuario()" class="nav-item nav-link text-secondary font-weight-bold" id="nav-minhas-postagens-tab" data-toggle="tab" href="#minhas-postagens" role="tab" aria-controls="nav-minhas-postagens" aria-selected="false">Minhas postagens</a>      <a class="nav-item nav-link text-secondary font-weight-bold" id="nav-postagens-por-tema-tab" data-toggle="tab" href="#postagens-por-tema" role="tab" aria-controls="nav-postagens-por-tema" aria-selected="false">Postagens por tema</a>    </div>  </nav>  <div class="tab-content mt-5" id="nav-tabContent">    <div class="tab-pane fade show active" id="todas-as-postagens" role="tabpanel" aria-labelledby="nav-todas-as-postagens-tab">      <div class="row d-flex justify-content-center mt-5 mb-5">        <div class="col-md-4">          <div class="form-group">            <input type="text" class="form-control" id="tituloPostagem" placeholder="Busque por título" [(ngModel)]="tituloPostagem" (keyup)="findByTituloPostagem()">          </div>        </div>      </div>      <div class="card-columns">        <div class="card text-center"        *ngFor="let postagem of listaPostagens | orderBy: key : reverse">          <div class="card-body">            <h5 class="card-title m-0">{{postagem.titulo}}</h5>            <p class="card-text">              <small class="text-muted">                Tema: {{postagem.tema.descricao}}              </small>            </p>            <p class="card-text">{{postagem.texto}}</p>            <p class="card-text m-0">              <small class="text-muted">                Publicado por {{postagem.usuario.nome}}              </small>            </p>            <p class="card-text">              <small class="text-muted">                em {{postagem.data | date: "dd/MM/yyyy"}} às {{postagem.data | date: "HH:mm"}}              </small>            </p>          </div>        </div>      </div>    </div>    <div class="tab-pane fade" id="minhas-postagens" role="tabpanel" aria-labelledby="nav-minhas-postagens-tab">      <div class="card-columns">        <div class="card text-center"        *ngFor="let postagem of usuario.postagem | orderBy: key : reverse">          <div class="card-body">            <h5 class="card-title m-0">{{postagem.titulo}}</h5>            <p class="card-text">              <small class="text-muted">                Tema: {{postagem.tema.descricao}}              </small>            </p>            <p class="card-text">{{postagem.texto}}</p>            <p class="card-text m-0">              <small class="text-muted">                Publicado por {{usuario.nome}}              </small>            </p>            <p class="card-text">              <small class="text-muted">                em {{postagem.data | date: "dd/MM/yyyy"}} às {{postagem.data | date: "HH:mm"}}              </small>            </p>            <a [routerLink]="[\'/postagem-edit\', postagem.id]" class="text-info mr-3" href="">Editar</a>            <a [routerLink]="[\'/postagem-delete\', postagem.id]" class="text-danger" href="">Apagar</a>          </div>        </div>      </div>    </div>    <div class="tab-pane fade" id="postagens-por-tema" role="tabpanel" aria-labelledby="nav-postagens-por-tema-tab">      <div class="row d-flex justify-content-center mt-5 mb-5">        <div class="col-md-4">          <div class="form-group">            <input type="text" class="form-control" id="nomeTema" placeholder="Busque por tema" [(ngModel)]="nomeTema" (keyup)="findByNomeTema()">          </div>        </div>      </div>      <div class="card-columns" *ngFor="let tema of listaTemas">        <div class="card text-center"        *ngFor="let postagem of tema.postagem | orderBy: key : reverse">          <div class="card-body">            <h5 class="card-title m-0">{{postagem.titulo}}</h5>            <p class="card-text">              <small class="text-muted">                Tema: {{tema.descricao}}              </small>            </p>            <p class="card-text">{{postagem.texto}}</p>            <p class="card-text m-0">              <small class="text-muted">                Publicado por {{postagem.usuario.nome}}              </small>            </p>            <p class="card-text">              <small class="text-muted">                em {{postagem.data | date: "dd/MM/yyyy"}} às {{postagem.data | date: "HH:mm"}}              </small>            </p>          </div>        </div>      </div>    </div>  </div></div><div class="modal fade" id="nova-postagem" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">  <div class="modal-dialog modal-dialog-centered" role="document">    <div class="modal-content">      <div class="modal-header">        <h5 class="modal-title" id="TituloModalCentralizado">Nova postagem</h5>        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">          <span aria-hidden="true">&times;</span>        </button>      </div>      <div class="modal-body">        <div class="form-group">          <label for="titulo">Título</label>          <input [(ngModel)]="postagem.titulo" type="text" class="form-control" id="titulo" placeholder="Digite o título">        </div>        <div class="form-group">          <label for="texto">Texto</label>          <textarea [(ngModel)]="postagem.texto" name="texto" id="texto" rows="3" class="form-control"></textarea>        </div>        <div class="form-group">          <label for="tema">Escolha um tema ou <a data-dismiss="modal" routerLink="/tema">cadastre um novo</a>:</label>          <select name="tema" id="tema" class="form-control" [(ngModel)]="idTema" (change)="findByIdTema()">            <option *ngFor="let tema of listaTemas" value="{{tema.id}}">              {{tema.descricao}}            </option>          </select>        </div>      </div>      <div class="modal-footer">        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>        <button type="button" class="btn btn-success" data-dismiss="modal" (click)="publicar()">Publicar</button>      </div>    </div>  </div></div></div>'
     var COMPONENTS = [{'name': 'AlertasComponent', 'selector': 'app-alertas'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CadastrarComponent', 'selector': 'app-cadastrar'},{'name': 'EntrarComponent', 'selector': 'app-entrar'},{'name': 'InicioComponent', 'selector': 'app-inicio'},{'name': 'MenuComponent', 'selector': 'app-menu'},{'name': 'PostagemDeleteComponent', 'selector': 'app-postagem-delete'},{'name': 'PostagemEditComponent', 'selector': 'app-postagem-edit'},{'name': 'RodapeComponent', 'selector': 'app-rodape'},{'name': 'TemaComponent', 'selector': 'app-tema'},{'name': 'TemaDeleteComponent', 'selector': 'app-tema-delete'},{'name': 'TemaEditComponent', 'selector': 'app-tema-edit'},{'name': 'UsuarioEditComponent', 'selector': 'app-usuario-edit'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'InicioComponent'};
@@ -1289,7 +1319,7 @@ findByNomeTema() {
 
 
 
-
+                   
 
 
 
