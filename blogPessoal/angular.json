@@ -129,5 +129,7 @@
       }
     }
   },
-  "defaultProject": "blogPessoal"
+  "cli": {
+    "analytics": false
+  }
 }

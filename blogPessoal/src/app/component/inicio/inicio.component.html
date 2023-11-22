@@ -73,6 +73,19 @@
                 em {{postagem.data | date: "dd/MM/yyyy"}} às {{postagem.data | date: "HH:mm"}}
               </small>
             </p>
+
+            <div class="card text-center">
+            <h6 class="card-title m-0">Comentários</h6>
+              <div *ngFor="let comentario of postagem.comentario | orderBy: key : reverse">
+                <p class="card-text m-0">{{comentario.texto}}</p>
+                <p class="card-text">
+                  <small class="text-muted">
+                    por {{comentario.usuario.nome}} em {{comentario.data | date: "dd/MM/yyyy"}} às {{comentario.data | date: "HH:mm"}}
+                  </small>
+                </p>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
