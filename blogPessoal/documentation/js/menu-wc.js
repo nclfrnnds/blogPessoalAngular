@@ -87,12 +87,12 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">MenuComponent</a>
                                             </li>
                                             <li class="link">
-                                                <a href="components/PostagemDeleteComponent.html"
-                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">PostagemDeleteComponent</a>
+                                                <a href="components/PublicacaoDeleteComponent.html"
+                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">PublicacaoDeleteComponent</a>
                                             </li>
                                             <li class="link">
-                                                <a href="components/PostagemEditComponent.html"
-                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">PostagemEditComponent</a>
+                                                <a href="components/PublicacaoEditComponent.html"
+                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">PublicacaoEditComponent</a>
                                             </li>
                                             <li class="link">
                                                 <a href="components/RodapeComponent.html"
@@ -131,7 +131,7 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         </div>
                         <ul class="links collapse " ${ isNormalMode ? 'id="classes-links"' : 'id="xs-classes-links"' }>
                             <li class="link">
-                                <a href="classes/Postagem.html" data-type="entity-link">Postagem</a>
+                                <a href="classes/Publicacao.html" data-type="entity-link">Publicacao</a>
                             </li>
                             <li class="link">
                                 <a href="classes/Tema.html" data-type="entity-link">Tema</a>
@@ -159,7 +159,7 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     <a href="injectables/AuthService.html" data-type="entity-link">AuthService</a>
                                 </li>
                                 <li class="link">
-                                    <a href="injectables/PostagemService.html" data-type="entity-link">PostagemService</a>
+                                    <a href="injectables/PublicacaoService.html" data-type="entity-link">PublicacaoService</a>
                                 </li>
                                 <li class="link">
                                     <a href="injectables/TemaService.html" data-type="entity-link">TemaService</a>

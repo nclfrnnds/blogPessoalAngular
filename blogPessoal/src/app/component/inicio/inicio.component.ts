@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Postagem } from 'src/app/model/Postagem';
+import { Publicacao } from 'src/app/model/Publicacao';
 import { Comentario } from 'src/app/model/Comentario';
 import { Tema } from 'src/app/model/Tema';
 import { Usuario } from 'src/app/model/Usuario';
 import { AlertasService } from 'src/app/service/alertas.service';
 import { AuthService } from 'src/app/service/auth.service';
-import { PostagemService } from 'src/app/service/postagem.service';
+import { PublicacaoService } from 'src/app/service/publicacao.service';
 import { ComentarioService } from 'src/app/service/comentario.service';
 import { TemaService } from 'src/app/service/tema.service';
 import { environment } from 'src/environments/environment.prod';
@@ -20,16 +20,16 @@ export class InicioComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private postagemService: PostagemService,
+    private publicacaoService: PublicacaoService,
     private comentarioService: ComentarioService,
     private temaService: TemaService,
     private authService: AuthService,
     private alertas: AlertasService
   ) { }
 
-  postagem: Postagem = new Postagem();
-  listaPostagens: Postagem[];
-  tituloPostagem: string;
+  publicacao: Publicacao = new Publicacao();
+  listaPublicacoes: Publicacao[];
+  tituloPublicacao: string;
 
   comentario: Comentario = new Comentario();
   listaComentarios: Comentario[];
@@ -55,7 +55,7 @@ export class InicioComponent implements OnInit {
     }
 
     this.findAllTemas();
-    this.findAllPostagens();
+    this.findAllPublicacoes();
 
   }
 
@@ -71,9 +71,9 @@ export class InicioComponent implements OnInit {
     });
   }
 
-  findAllPostagens() {
-    this.postagemService.getAllPostagem().subscribe((response: Postagem[]) => {
-      this.listaPostagens = response;
+  findAllPublicacoes() {
+    this.publicacaoService.getAllPublicacao().subscribe((response: Publicacao[]) => {
+      this.listaPublicacoes = response;
     });
   }
 
@@ -91,26 +91,26 @@ export class InicioComponent implements OnInit {
 
   publicar() {
     this.tema.id = this.idTema;
-    this.postagem.tema = this.tema;
+    this.publicacao.tema = this.tema;
 
     this.usuario.id = this.idUsuario;
-    this.postagem.usuario = this.usuario;
+    this.publicacao.usuario = this.usuario;
 
-    this.postagemService.postPostagem(this.postagem).subscribe((response: Postagem) => {
-      this.postagem = response;
-      this.alertas.showAlertSuccess("Postagem realizada com sucesso!");
-      this.findAllPostagens();
+    this.publicacaoService.postPublicacao(this.publicacao).subscribe((response: Publicacao) => {
+      this.publicacao = response;
+      this.alertas.showAlertSuccess("Publicacao realizada com sucesso!");
+      this.findAllPublicacoes();
       this.findAllTemas();
-      this.postagem = new Postagem();
+      this.publicacao = new Publicacao();
     });
   }
 
-  findByTituloPostagem() {
-    if (this.tituloPostagem == "") {
-      this.findAllPostagens();
+  findByTituloPublicacao() {
+    if (this.tituloPublicacao == "") {
+      this.findAllPublicacoes();
     } else {
-      this.postagemService.getByTituloPostagem(this.tituloPostagem).subscribe((response: Postagem[]) => {
-        this.listaPostagens = response;
+      this.publicacaoService.getByTituloPublicacao(this.tituloPublicacao).subscribe((response: Publicacao[]) => {
+        this.listaPublicacoes = response;
       });
     }
   }

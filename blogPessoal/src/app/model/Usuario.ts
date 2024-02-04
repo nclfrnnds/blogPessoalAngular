@@ -1,5 +1,5 @@
 import { Comentario } from "./Comentario";
-import { Postagem } from "./Postagem";
+import { Publicacao } from "./Publicacao";
 
 export class Usuario {
 
@@ -9,7 +9,7 @@ export class Usuario {
   public senha: string;
   public foto: string;
   public tipo: string;
-  public postagem: Postagem[];
+  public publicacao: Publicacao[];
   public comentario: Comentario[];
   
 }

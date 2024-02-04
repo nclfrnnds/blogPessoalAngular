@@ -114,27 +114,27 @@
 <path fill="none" stroke="black" d="M1363,-122.24C1363,-137.57 1363,-157 1363,-157 1363,-157 1161.78,-157 1161.78,-157"/>
 <polygon fill="black" stroke="black" points="1161.78,-153.5 1151.78,-157 1161.78,-160.5 1161.78,-153.5"/>
 </g>
-<!-- PostagemDeleteComponent -->
+<!-- PublicacaoDeleteComponent -->
 <g id="node7" class="node">
-<title>PostagemDeleteComponent</title>
+<title>PublicacaoDeleteComponent</title>
 <polygon fill="#ffffb3" stroke="black" points="1288.3,-122 1115.7,-122 1115.7,-86 1288.3,-86 1288.3,-122"/>
-<text text-anchor="middle" x="1202" y="-99.8" font-family="Times,serif" font-size="14.00">PostagemDeleteComponent</text>
+<text text-anchor="middle" x="1202" y="-99.8" font-family="Times,serif" font-size="14.00">PublicacaoDeleteComponent</text>
 </g>
-<!-- PostagemDeleteComponent&#45;&gt;AppModule -->
+<!-- PublicacaoDeleteComponent&#45;&gt;AppModule -->
 <g id="edge7" class="edge">
-<title>PostagemDeleteComponent&#45;&gt;AppModule</title>
+<title>PublicacaoDeleteComponent&#45;&gt;AppModule</title>
 <path fill="none" stroke="black" d="M1133.84,-122.11C1133.84,-122.11 1133.84,-140.99 1133.84,-140.99"/>
 <polygon fill="black" stroke="black" points="1130.34,-140.99 1133.84,-150.99 1137.34,-140.99 1130.34,-140.99"/>
 </g>
-<!-- PostagemEditComponent -->
+<!-- PublicacaoEditComponent -->
 <g id="node8" class="node">
-<title>PostagemEditComponent</title>
+<title>PublicacaoEditComponent</title>
 <polygon fill="#ffffb3" stroke="black" points="1097.6,-122 938.4,-122 938.4,-86 1097.6,-86 1097.6,-122"/>
-<text text-anchor="middle" x="1018" y="-99.8" font-family="Times,serif" font-size="14.00">PostagemEditComponent</text>
+<text text-anchor="middle" x="1018" y="-99.8" font-family="Times,serif" font-size="14.00">PublicacaoEditComponent</text>
 </g>
-<!-- PostagemEditComponent&#45;&gt;AppModule -->
+<!-- PublicacaoEditComponent&#45;&gt;AppModule -->
 <g id="edge8" class="edge">
-<title>PostagemEditComponent&#45;&gt;AppModule</title>
+<title>PublicacaoEditComponent&#45;&gt;AppModule</title>
 <path fill="none" stroke="black" d="M1082.86,-122.11C1082.86,-122.11 1082.86,-140.99 1082.86,-140.99"/>
 <polygon fill="black" stroke="black" points="1079.36,-140.99 1082.86,-150.99 1086.36,-140.99 1079.36,-140.99"/>
 </g>

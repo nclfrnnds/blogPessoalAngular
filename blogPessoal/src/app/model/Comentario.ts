@@ -1,4 +1,4 @@
-import { Postagem } from "./Postagem";
+import { Publicacao } from "./Publicacao";
 import { Usuario } from "./Usuario";
 
 export class Comentario {
@@ -7,6 +7,6 @@ export class Comentario {
   public texto: string;
   public data: Date;
   public usuario: Usuario;
-  public postagem: Postagem;
+  public publicacao: Publicacao;
 
 }

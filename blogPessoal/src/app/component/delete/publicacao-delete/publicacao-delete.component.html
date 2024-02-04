@@ -2,13 +2,13 @@
 
   <div class="row mb-5">
     <div class="col-md-12">
-      <h1 class="text-center text-secondary">Apagar postagem</h1>
+      <h1 class="text-center text-secondary">Apagar publicacao</h1>
     </div>
   </div>
 
   <div class="row mb-3">
     <div class="col-md-12">
-      <h4 class="text-center text-secondary">Você tem certeza de que deseja apagar esta postagem?</h4>
+      <h4 class="text-center text-secondary">Você tem certeza de que deseja apagar esta publicacao?</h4>
     </div>
   </div>
 
@@ -16,11 +16,11 @@
     <div class="col-md-4">
       <div class="card text-center">
           <div class="card-body">
-            <h5 class="card-title m-0">{{postagem.titulo}}</h5>
-            <p class="card-text"><small class="text-muted">Tema: {{postagem.tema.descricao}}</small></p>
-            <p class="card-text mt-3">{{postagem.texto}}</p>
+            <h5 class="card-title m-0">{{publicacao.titulo}}</h5>
+            <p class="card-text"><small class="text-muted">Tema: {{publicacao.tema.descricao}}</small></p>
+            <p class="card-text mt-3">{{publicacao.texto}}</p>
             <p class="card-text"><small class="text-muted">
-              Publicado em {{postagem.data | date: "dd/MM/yyyy"}} às {{postagem.data | date: "HH:mm"}}
+              Publicado em {{publicacao.data | date: "dd/MM/yyyy"}} às {{publicacao.data | date: "HH:mm"}}
             </small></p>
           </div>
         </div>

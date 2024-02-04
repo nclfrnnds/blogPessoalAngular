@@ -12,8 +12,8 @@
 
       <div class="row d-flex justify-content-center mt-3 mb-5">
         <div class="col-md-6">
-          <button class="btn btn-light mt-2 mr-2" data-toggle="modal" data-target="#nova-postagem">Nova postagem</button>
-          <a class="btn btn-outline-light mt-2" href="#postagens">Ver postagens</a>
+          <button class="btn btn-light mt-2 mr-2" data-toggle="modal" data-target="#nova-publicacao">Nova publicacao</button>
+          <a class="btn btn-outline-light mt-2" href="#publicacoes">Ver publicacoes</a>
         </div>
       </div>
 
@@ -26,57 +26,57 @@
 
 </div>
 
-<div class="container mb-5 mt-5" id="postagens">
+<div class="container mb-5 mt-5" id="publicacoes">
 
   <nav>
     <div class="nav nav-tabs d-flex justify-content-center" id="nav-tab" role="tablist">
 
-      <a class="nav-item nav-link text-secondary font-weight-bold active" id="nav-todas-as-postagens-tab" data-toggle="tab" href="#todas-as-postagens" role="tab" aria-controls="nav-todas-as-postagens" aria-selected="true">Todas as postagens</a>
+      <a class="nav-item nav-link text-secondary font-weight-bold active" id="nav-todas-as-publicacoes-tab" data-toggle="tab" href="#todas-as-publicacoes" role="tab" aria-controls="nav-todas-as-publicacoes" aria-selected="true">Todas as publicacoes</a>
 
-      <a (click)="findByIdUsuario()" class="nav-item nav-link text-secondary font-weight-bold" id="nav-minhas-postagens-tab" data-toggle="tab" href="#minhas-postagens" role="tab" aria-controls="nav-minhas-postagens" aria-selected="false">Minhas postagens</a>
+      <a (click)="findByIdUsuario()" class="nav-item nav-link text-secondary font-weight-bold" id="nav-minhas-publicacoes-tab" data-toggle="tab" href="#minhas-publicacoes" role="tab" aria-controls="nav-minhas-publicacoes" aria-selected="false">Minhas publicacoes</a>
 
-      <a class="nav-item nav-link text-secondary font-weight-bold" id="nav-postagens-por-tema-tab" data-toggle="tab" href="#postagens-por-tema" role="tab" aria-controls="nav-postagens-por-tema" aria-selected="false">Postagens por tema</a>
+      <a class="nav-item nav-link text-secondary font-weight-bold" id="nav-publicacoes-por-tema-tab" data-toggle="tab" href="#publicacoes-por-tema" role="tab" aria-controls="nav-publicacoes-por-tema" aria-selected="false">Publicacoes por tema</a>
 
     </div>
   </nav>
 
   <div class="tab-content mt-5" id="nav-tabContent">
 
-    <div class="tab-pane fade show active" id="todas-as-postagens" role="tabpanel" aria-labelledby="nav-todas-as-postagens-tab">
+    <div class="tab-pane fade show active" id="todas-as-publicacoes" role="tabpanel" aria-labelledby="nav-todas-as-publicacoes-tab">
 
       <div class="row d-flex justify-content-center mt-5 mb-5">
         <div class="col-md-4">
           <div class="form-group">
-            <input type="text" class="form-control" id="tituloPostagem" placeholder="Busque por título" [(ngModel)]="tituloPostagem" (keyup)="findByTituloPostagem()">
+            <input type="text" class="form-control" id="tituloPublicacao" placeholder="Busque por título" [(ngModel)]="tituloPublicacao" (keyup)="findByTituloPublicacao()">
           </div>
         </div>
       </div>
 
       <div class="card-columns">
         <div class="card text-center"
-        *ngFor="let postagem of listaPostagens | orderBy: key : reverse">
+        *ngFor="let publicacao of listaPublicacoes | orderBy: key : reverse">
           <div class="card-body">
-            <h5 class="card-title m-0">{{postagem.titulo}}</h5>
+            <h5 class="card-title m-0">{{publicacao.titulo}}</h5>
             <p class="card-text">
               <small class="text-muted">
-                Tema: {{postagem.tema.descricao}}
+                Tema: {{publicacao.tema.descricao}}
               </small>
             </p>
-            <p class="card-text">{{postagem.texto}}</p>
+            <p class="card-text">{{publicacao.texto}}</p>
             <p class="card-text m-0">
               <small class="text-muted">
-                Publicado por {{postagem.usuario.nome}}
+                Publicado por {{publicacao.usuario.nome}}
               </small>
             </p>
             <p class="card-text">
               <small class="text-muted">
-                em {{postagem.data | date: "dd/MM/yyyy"}} às {{postagem.data | date: "HH:mm"}}
+                em {{publicacao.data | date: "dd/MM/yyyy"}} às {{publicacao.data | date: "HH:mm"}}
               </small>
             </p>
 
             <div class="card text-center">
             <h6 class="card-title m-0">Comentários</h6>
-              <div *ngFor="let comentario of postagem.comentario | orderBy: key : reverse">
+              <div *ngFor="let comentario of publicacao.comentario | orderBy: key : reverse">
                 <p class="card-text m-0">{{comentario.texto}}</p>
                 <p class="card-text">
                   <small class="text-muted">
@@ -92,19 +92,19 @@
 
     </div>
 
-    <div class="tab-pane fade" id="minhas-postagens" role="tabpanel" aria-labelledby="nav-minhas-postagens-tab">
+    <div class="tab-pane fade" id="minhas-publicacoes" role="tabpanel" aria-labelledby="nav-minhas-publicacoes-tab">
 
       <div class="card-columns">
         <div class="card text-center"
-        *ngFor="let postagem of usuario.postagem | orderBy: key : reverse">
+        *ngFor="let publicacao of usuario.publicacao | orderBy: key : reverse">
           <div class="card-body">
-            <h5 class="card-title m-0">{{postagem.titulo}}</h5>
+            <h5 class="card-title m-0">{{publicacao.titulo}}</h5>
             <p class="card-text">
               <small class="text-muted">
-                Tema: {{postagem.tema.descricao}}
+                Tema: {{publicacao.tema.descricao}}
               </small>
             </p>
-            <p class="card-text">{{postagem.texto}}</p>
+            <p class="card-text">{{publicacao.texto}}</p>
             <p class="card-text m-0">
               <small class="text-muted">
                 Publicado por {{usuario.nome}}
@@ -112,12 +112,12 @@
             </p>
             <p class="card-text">
               <small class="text-muted">
-                em {{postagem.data | date: "dd/MM/yyyy"}} às {{postagem.data | date: "HH:mm"}}
+                em {{publicacao.data | date: "dd/MM/yyyy"}} às {{publicacao.data | date: "HH:mm"}}
               </small>
             </p>
 
-            <a [routerLink]="['/postagem-edit', postagem.id]" class="text-info mr-3" href="">Editar</a>
-            <a [routerLink]="['/postagem-delete', postagem.id]" class="text-danger" href="">Apagar</a>
+            <a [routerLink]="['/publicacao-edit', publicacao.id]" class="text-info mr-3" href="">Editar</a>
+            <a [routerLink]="['/publicacao-delete', publicacao.id]" class="text-danger" href="">Apagar</a>
 
           </div>
         </div>
@@ -125,7 +125,7 @@
 
     </div>
 
-    <div class="tab-pane fade" id="postagens-por-tema" role="tabpanel" aria-labelledby="nav-postagens-por-tema-tab">
+    <div class="tab-pane fade" id="publicacoes-por-tema" role="tabpanel" aria-labelledby="nav-publicacoes-por-tema-tab">
 
       <div class="row d-flex justify-content-center mt-5 mb-5">
         <div class="col-md-4">
@@ -137,23 +137,23 @@
 
       <div class="card-columns" *ngFor="let tema of listaTemas">
         <div class="card text-center"
-        *ngFor="let postagem of tema.postagem | orderBy: key : reverse">
+        *ngFor="let publicacao of tema.publicacao | orderBy: key : reverse">
           <div class="card-body">
-            <h5 class="card-title m-0">{{postagem.titulo}}</h5>
+            <h5 class="card-title m-0">{{publicacao.titulo}}</h5>
             <p class="card-text">
               <small class="text-muted">
                 Tema: {{tema.descricao}}
               </small>
             </p>
-            <p class="card-text">{{postagem.texto}}</p>
+            <p class="card-text">{{publicacao.texto}}</p>
             <p class="card-text m-0">
               <small class="text-muted">
-                Publicado por {{postagem.usuario.nome}}
+                Publicado por {{publicacao.usuario.nome}}
               </small>
             </p>
             <p class="card-text">
               <small class="text-muted">
-                em {{postagem.data | date: "dd/MM/yyyy"}} às {{postagem.data | date: "HH:mm"}}
+                em {{publicacao.data | date: "dd/MM/yyyy"}} às {{publicacao.data | date: "HH:mm"}}
               </small>
             </p>
           </div>
@@ -166,11 +166,11 @@
 
 </div>
 
-<div class="modal fade" id="nova-postagem" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+<div class="modal fade" id="nova-publicacao" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="TituloModalCentralizado">Nova postagem</h5>
+        <h5 class="modal-title" id="TituloModalCentralizado">Nova publicacao</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -179,12 +179,12 @@
 
         <div class="form-group">
           <label for="titulo">Título</label>
-          <input [(ngModel)]="postagem.titulo" type="text" class="form-control" id="titulo" placeholder="Digite o título">
+          <input [(ngModel)]="publicacao.titulo" type="text" class="form-control" id="titulo" placeholder="Digite o título">
         </div>
 
         <div class="form-group">
           <label for="texto">Texto</label>
-          <textarea [(ngModel)]="postagem.texto" name="texto" id="texto" rows="3" class="form-control"></textarea>
+          <textarea [(ngModel)]="publicacao.texto" name="texto" id="texto" rows="3" class="form-control"></textarea>
         </div>
 
         <div class="form-group">

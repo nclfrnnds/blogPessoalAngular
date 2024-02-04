@@ -14,8 +14,8 @@ import { InicioComponent } from './component/inicio/inicio.component';
 import { TemaComponent } from './component/tema/tema.component';
 import { TemaEditComponent } from './component/edit/tema-edit/tema-edit.component';
 import { TemaDeleteComponent } from './component/delete/tema-delete/tema-delete.component';
-import { PostagemDeleteComponent } from './component/delete/postagem-delete/postagem-delete.component';
-import { PostagemEditComponent } from './component/edit/postagem-edit/postagem-edit.component';
+import { PublicacaoDeleteComponent } from './component/delete/publicacao-delete/publicacao-delete.component';
+import { PublicacaoEditComponent } from './component/edit/publicacao-edit/publicacao-edit.component';
 import { UsuarioEditComponent } from './component/edit/usuario-edit/usuario-edit.component';
 import { AlertasComponent } from './component/alertas/alertas.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
@@ -32,8 +32,8 @@ import { OrderModule } from 'ngx-order-pipe';
     TemaComponent,
     TemaEditComponent,
     TemaDeleteComponent,
-    PostagemDeleteComponent,
-    PostagemEditComponent,
+    PublicacaoDeleteComponent,
+    PublicacaoEditComponent,
     UsuarioEditComponent,
     AlertasComponent
   ],

@@ -1,27 +1,27 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Postagem } from 'src/app/model/Postagem';
+import { Publicacao } from 'src/app/model/Publicacao';
 import { Tema } from 'src/app/model/Tema';
 import { AlertasService } from 'src/app/service/alertas.service';
-import { PostagemService } from 'src/app/service/postagem.service';
+import { PublicacaoService } from 'src/app/service/publicacao.service';
 import { TemaService } from 'src/app/service/tema.service';
 
 @Component({
-  selector: 'app-postagem-edit',
-  templateUrl: './postagem-edit.component.html',
-  styleUrls: ['./postagem-edit.component.css']
+  selector: 'app-publicacao-edit',
+  templateUrl: './publicacao-edit.component.html',
+  styleUrls: ['./publicacao-edit.component.css']
 })
-export class PostagemEditComponent implements OnInit {
+export class PublicacaoEditComponent implements OnInit {
 
   constructor(
-    private postagemService: PostagemService,
+    private publicacaoService: PublicacaoService,
     private router: Router,
     private route: ActivatedRoute,
     private temaService: TemaService,
     private alertas: AlertasService
   ) { }
 
-  postagem: Postagem = new Postagem();
+  publicacao: Publicacao = new Publicacao();
 
   tema: Tema = new Tema();
   listaTemas: Tema[];
@@ -37,14 +37,14 @@ export class PostagemEditComponent implements OnInit {
     }
 
     let id = this.route.snapshot.params["id"];
-    this.findByIdPostagem(id);
+    this.findByIdPublicacao(id);
     this.findAllTemas();
 
   }
 
-  findByIdPostagem(id: number) {
-    this.postagemService.getByIdPostagem(id).subscribe((response: Postagem) => {
-      this.postagem = response;
+  findByIdPublicacao(id: number) {
+    this.publicacaoService.getByIdPublicacao(id).subscribe((response: Publicacao) => {
+      this.publicacao = response;
     });
   }
 
@@ -62,11 +62,11 @@ export class PostagemEditComponent implements OnInit {
 
   atualizar() {
     this.tema.id = this.idTema;
-    this.postagem.tema = this.tema;
+    this.publicacao.tema = this.tema;
 
-    this.postagemService.putPostagem(this.postagem).subscribe((response: Postagem) => {
-      this.postagem = response;
-      this.alertas.showAlertSuccess("Postagem atualizada com sucesso!");
+    this.publicacaoService.putPublicacao(this.publicacao).subscribe((response: Publicacao) => {
+      this.publicacao = response;
+      this.alertas.showAlertSuccess("Publicacao atualizada com sucesso!");
       this.router.navigate(["/inicio"]);
     });
   }

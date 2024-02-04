@@ -2,7 +2,7 @@ import { Comentario } from "./Comentario";
 import { Tema } from "./Tema";
 import { Usuario } from "./Usuario";
 
-export class Postagem {
+export class Publicacao {
 
   public id: number;
   public titulo: string;
